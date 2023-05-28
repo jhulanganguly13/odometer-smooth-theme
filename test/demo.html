@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <link rel="stylesheet" href="../themes/odometer-theme-car.css" />
+  <style>
+    .odometer {
+      font-size: 40px;
+    }
+  </style>
+</head>
+<body>
+  <div class="odometer">1234</div>
+  <h1>Odometer must display leading zeros correctly</h1>
+
+  <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+  <script src="../odometer.js"></script>
+
+  <script>
+    window.odometerOptions = {
+      format: '(ddd).dd'
+    };
+
+    setTimeout(function(){
+      $('.odometer').html('00920099');
+    }, 100);
+
+    /*
+    setTimeout(function(){
+      var number = 000096248;
+      var paddedNumber = String(number).padStart(9, '0');
+      $('.odometer').html(paddedNumber);
+    }, 100);
+    */
+  </script>
+</body>
+</html>
